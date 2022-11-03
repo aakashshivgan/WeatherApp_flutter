@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app_getx/controller/global_controller.dart';
+import 'package:weather_app_getx/utils/custom_colors.dart';
+import 'package:weather_app_getx/widgets/comfort_level_widget.dart';
 import 'package:weather_app_getx/widgets/currentWeather_widget.dart';
 import 'package:weather_app_getx/widgets/daily_dataForcast_widget.dart';
 import 'package:weather_app_getx/widgets/header_widget.dart';
@@ -22,9 +24,18 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: Obx((() => globalController.checkLoading().isTrue
-            ? const Center(
-                child: CircularProgressIndicator(),
-              )
+            ? Center(
+                child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/clouds.png",
+                    height: 200,
+                    width: 200,
+                  ),
+                  const CircularProgressIndicator()
+                ],
+              ))
             : Center(
                 child: ListView(
                   scrollDirection: Axis.vertical,
@@ -51,6 +62,17 @@ class _HomePageState extends State<HomePage> {
                       weatherDataDaily:
                           globalController.getWeatherData().getDailyWeather(),
                     ),
+                    Container(
+                      height: 1,
+                      color: CustomColors.dividerLine,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    ComfortLevel(
+                        weatherDataCurrent: globalController
+                            .getWeatherData()
+                            .getCurrentWeather())
                   ],
                 ),
               ))),
