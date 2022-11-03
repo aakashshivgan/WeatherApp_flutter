@@ -52,7 +52,7 @@ class HourlyDataWidget extends StatelessWidget {
                   width: 90,
                   margin: const EdgeInsets.only(left: 20, right: 5),
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: CustomColors.dividerLine.withAlpha(200),
                       borderRadius: BorderRadius.circular(12),
                       boxShadow: [
                         BoxShadow(
