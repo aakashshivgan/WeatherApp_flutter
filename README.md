@@ -6,4 +6,4 @@ A new Flutter project.
 
 ## ScreenShots
 
-<img src="image/image3.jpg" width="200">  <img src="image/image.png" width="200">  <img src="image/image2.jpg" width="200"> 
+<img src="image/image3.jpg" width="200">  <img src="image/image1.jpg" width="200">  <img src="image/image2.jpg" width="200"> 
